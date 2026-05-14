@@ -177,6 +177,24 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation, recentScans 
                         </View>
                     </View>
 
+                    {/* Daily NutriTip */}
+                    <View style={styles.section}>
+                        <LinearGradient
+                            colors={GRADIENTS.premium as any}
+                            start={{ x: 0, y: 0 }}
+                            end={{ x: 1, y: 1 }}
+                            style={styles.tipCard}
+                        >
+                            <View style={styles.tipHeader}>
+                                <Ionicons name="bulb" size={24} color="#fff" />
+                                <Text style={styles.tipTitle}>NUTRITIP OF THE DAY</Text>
+                            </View>
+                            <Text style={styles.tipText}>
+                                "Did you know? Eating a handful of walnuts a day can help improve your heart health and provide essential Omega-3 fatty acids."
+                            </Text>
+                        </LinearGradient>
+                    </View>
+
                     {/* Recent Activities */}
                     <View style={styles.section}>
                         <View style={styles.sectionHeader}>
@@ -429,6 +447,30 @@ const styles = StyleSheet.create({
         color: COLORS.textMuted,
         marginTop: 4,
         textAlign: 'center',
+    },
+    tipCard: {
+        borderRadius: 24,
+        padding: 20,
+        ...SHADOWS.md,
+    },
+    tipHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+        marginBottom: 12,
+    },
+    tipTitle: {
+        fontSize: 12,
+        fontWeight: FONT_WEIGHT.bold,
+        color: 'rgba(255,255,255,0.8)',
+        letterSpacing: 1.5,
+    },
+    tipText: {
+        fontSize: 15,
+        color: '#fff',
+        lineHeight: 22,
+        fontWeight: FONT_WEIGHT.medium,
+        fontStyle: 'italic',
     },
 });
 
